@@ -13,6 +13,7 @@ def get_blogs():
     soup = BeautifulSoup(r.content, 'html.parser')
     s = soup.find('div', class_="view-content")
     h = s.find_all('h3', class_="field-content")
+    div = s.find_all('div', class_="field-content")
     span = s.find_all('span', class_="field-content")
 
     a_links = []
@@ -26,11 +27,12 @@ def get_blogs():
         if a_tag:
             a_links.append(f"https://blogs.worldbank.org{a_tag['href']}")
             headers.append(a_tag.text)
-    for tag in span:
+    for tag in div:
         p = tag.find('p')
-        date = tag.find('time')
         if p:
             descrip.append(p.text)
+    for tag in span:
+        date = tag.find('time')
         if date:
             txt = date.text
             frmt_date = datetime.strptime(txt, date_frmt)
