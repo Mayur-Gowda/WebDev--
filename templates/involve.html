@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+		<title>Downloads</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/download.css')}}">
+{% endblock %}
+
+{% block content %}
+			<div class="flex min-h-screen items-center justify-center bg-black">
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- image 1  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/no poverty.jpg')}}" alt="">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">NO POVERTY</h1>
+                    <p class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Eradicating poverty by ensuring equal access to resources and opportunities for all</p>
+                    <button class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 1  -->
+            <!-- image 2  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/hunger.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">ZERO HUNGER</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Achieving global food security through sustainable practices and equitable distribution</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 2 -->
+            <!-- image 3 -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/good health and well being.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">GOOD HEALTH AND WELL-BEING</h1>
+                    <p class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Promoting overall health and ensuring well-being for all individuals and communities</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 3  -->
+            <!-- image 4  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/quality education.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">QUALITY EDUCATION</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Inspiring lifelong learning through effective, meaningful, and inclusive education</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 4  -->
+            <!-- image 5  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/gender equality.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">GENDER EQUALITY</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ensuring equal rights and opportunities regardless of gender in society</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 5  -->
+            <!-- image 6  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/reduced inequalities.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">REDUCED INEQUALITIES</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Working to diminish disparities in income, access, and opportunities for societal equity</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 6  -->
+            <!-- image 7  -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/climate action.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">CLIMATE ACTION</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Taking urgent steps to combat climate change and its impacts for a sustainable future</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 7  -->
+            <!-- image 8 -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/life in the sae.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">LIFE BELOW WATER</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Preserving marine ecosystems and biodiversity for a sustainable aquatic life</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 8  -->
+            <!-- image 9 -->
+            <div class="group relative items-center justify-center overflow-hidden cursor-pointer">
+                <div class="h-96 w-72">
+                    <img class="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500"
+                        src="{{url_for('static', filename='images/life on the land.jpg')}}" alt="">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60  group-hover:to-black/70">
+                </div>
+                <div
+                    class="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                    <h1 class="text-3xl font-bold text-white">LIFE ON LAND</h1>
+                    <p
+                        class="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Safeguarding terrestrial ecosystems and biodiversity for a sustainable environment</p>
+                    <button
+                        class="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize text-white">download</button>
+                </div>
+            </div>
+            <!-- image 9  -->
+        </div>
+    </div>
+{% endblock %}

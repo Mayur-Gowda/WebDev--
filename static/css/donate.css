@@ -1,0 +1,15 @@
+.head {
+  color: white;
+}
+
+.head p {
+  opacity: 70%;
+}
+
+.col {
+  padding: 50px;
+}
+
+.card {
+  background-color: #fd5927 ;
+}

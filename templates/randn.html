@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	<title>Our Blog</title>
+{% endblock %}
+
+{% block content %}
+			<main class="main-content">
+				<div class="fullwidth-block inner-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								<div class="content">
+									<h2 class="entry-title">News</h2>
+									{% for blog in dt %}
+									<div class="post">
+										<div class="entry-date">
+											<div class="date">{{ blog[3][:2] }}</div>
+											<span class="month">{{ blog[3][3:] }}</span>
+										</div>
+										<div class="featured-image">
+											<img src="dummy/Band Name/0e51a0e0-10e8-463a-8985-cf295b716375.jpg" alt="">
+										</div>
+										<h2 class="entry-title"><a href="{{ blog[2] }}">{{ blog[0] }}</a></h2>
+										<p>{{ blog[1] }}</p>
+										<a href="{{ blog[2] }}">Read more</a>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->
+			</main> <!-- .main-content -->
+{% endblock %}

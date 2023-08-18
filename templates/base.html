@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+	<!--[if lt IE 9]>
+	<script src="{{url_for('static', filename='js/ie-support/html5.js')}}"></script>
+	<script src="{{url_for('static', filename='js/ie-support/respond.js')}}"></script>
+	<![endif]-->
+	{% block title %}
+
+  {% endblock %}
+</head>
+<body>
+<div id="site-content">
+			<header class="site-header">
+
+				<div class="container">
+					<a href="{{ url_for('homepage') }}" id="branding">
+						<img src="dummy/logo.png" alt="Site Title">
+						<small class="site-description">Placeholder</small>
+					</a> <!-- #branding -->
+					<nav class="navbar navbar-expand-lg navbar-light main-navigation">
+
+						<div class="container-fluid">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navibar" aria-controls="navibars" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse" id="navibar">
+								<ul class="menu navbar-nav">
+									<li class="menu-item nav-link active" aria-current="page"><a href="{{ url_for('homepage') }}">Home</a></li>
+									<li class="menu-item nav-link"><a href="{{ url_for('work') }}">Our Work</a></li>
+									<li class="menu-item nav-link"><a href="{{ url_for('randn') }}">News</a></li>
+									<li class="menu-item nav-link"><a href="{{ url_for('involve') }}">Get Involved</a></li>
+									<li class="menu-item nav-link"><a href="{{ url_for('about') }}">About Us</a></li>
+									<li class="menu-item nav-link"><a href="{{ url_for('donate') }}">Donate</a></li>
+								</ul> <!-- .menu -->
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header> <!-- .site-header -->
+  {% block content %}
+
+  {% endblock %}
+	<footer class="site-footer">
+				<div class="container">
+					<img src="dummy/logo-footer.png" alt="Site Name">
+
+					<form action="#" class="newsletter-form">
+						<input type="email" placeholder="Enter your email to join newsletter...">
+						<input type="submit" class="button cut-corner" value="Subscribe">
+					</form> <!-- .newsletter-form -->
+
+					<div class="social-links">
+						<a href="#"><i class="fa fa-facebook-square"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="#"><i class="fa fa-pinterest"></i></a>
+					</div> <!-- .social-links -->
+
+					<p class="copy">[Placeholder] is a non-profit organization. © {{ year }} [Placeholder]. All rights reserved.</p>
+			  </div>
+			</footer> <!-- .site-footer -->
+
+		<script src="{{url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+		<script src="{{url_for('static', filename='js/app.js')}}"></script>
+  </div> <!-- #site-content -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

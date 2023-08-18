@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}
+		<title>Band Name</title>
+{% endblock %}
+
+{% block content %}
+			<div class="hero">
+				<div class="slider">
+					<ul class="slides">
+						<li class="lazy-bg"  style="background-image: url('https://muslimaid.storage.googleapis.com/upload/img_cache/file-23441-9ac4afb6737e9e981023a11bb24f5128.jpg')">
+							<div class="container">
+								<h2 class="slide-title">NO POVERTY</h2>
+								<h3 class="slide-subtitle">End poverty in all its forms everywhere</h3>
+								<p class="slide-desc">Ensuring a world where every individual can live with dignity and without the burden of extreme economic hardship.</p>
+
+								<a href="https://sdgs.un.org/goals/goal1" class="button cut-corner">Read More</a>
+							</div>
+						</li>
+						<li class="lazy-bg"  style="background-image: url('https://media.globalcitizen.org/thumbnails/88/2f/882f30b0-0c07-41ce-8005-a47e589aea87/2-no-hunger-children-eating-hero.jpg__1600x900_q85_crop_subsampling-2.jpg')">
+							<div class="container">
+									<h2 class="slide-title">Zero Hunger</h2>
+									<h3 class="slide-subtitle">Ending hunger is not a choice, it's an ethical obligation</h3>
+									<p class="slide-desc">Zero Hunger is a Sustainable Development Goal (SDG) aiming to eradicate all forms of hunger, malnutrition, and food insecurity worldwide, ensuring everyone has access to sufficient, safe, and nutritious food.</p>
+
+									<a href="https://sdgs.un.org/goals/goal4" class="button cut-corner">Read More</a>
+							</div>
+						</li>
+						<li class="lazy-bg" style="background-image: url('https://www.world-nuclear.org/getattachment/Sustainable-Development-Goals-and-Nuclear/SDG1-No-Poverty/SDG1-No-Poverty.jpg.aspx')">
+							<div class="container">
+									<h2 class="slide-title">Quality Education</h2>
+									<h3 class="slide-subtitle"> 	Education is the most powerful weapon which can be used to change the world.</h3>
+									<p class="slide-desc">Quality education is crucial for empowering individuals, fostering critical thinking, and promoting equitable opportunities for personal and societal development.</p>
+
+									<a href="#" class="button cut-corner">Read More</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<main class="main-content">
+				<div class="fullwidth-block testimonial-section">
+					<div class="container">
+						<div class="quote-slider">
+							<ul class="slides">
+								<li>
+									<blockquote>
+										{% for quote in quote %}
+										<p>{{ quote }}</p>
+										<cite>{{ author }}</cite>
+
+										{% endfor %}
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>"Let us not be satisfied with just giving money. Money is not enough, money can be got, but they need your hearts to love them. So, spread your love everywhere you go."</p>
+										<cite>Mary Teresa Bojaxhiu MC</cite>
+										<span>Mother Teresa</span>
+									</blockquote>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- .testimonial-section -->
+
+				<div class="fullwidth-block upcoming-event-section" data-bg-color="#191919">
+					<div class="container">
+						<header class="section-header">
+							<h2 class="section-title">Upcoming events</h2>
+
+							<div class="event-nav">
+								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
+	    						<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
+							</div> <!-- .event-nav -->
+
+						</header> <!-- .section-header -->
+						<div class="event-carousel">
+
+							<div class="event">
+								<div class="entry-date">
+									<div class="date">18</div>
+									<span class="month">Sep 2023</span>
+								</div>
+								<h2 class="entry-title"><a href="#"></a>SDG Summit 2023</h2>
+								<p> During the United Nations General Assembly high-level week in September 2023, Heads of State and Gov</p>
+							</div> <!-- .event -->
+
+
+							<div class="event">
+								<div class="entry-date">
+									<div class="date">22</div>
+									<span class="month">MAR 2023</span>
+								</div>
+								<h2 class="entry-title"><a href="#">UN 2023 Water Conference</a></h2>
+								<p>On 20 December 2018 the General Assembly adopted the resolution on the “Midterm comprehensive review</p>
+							</div> <!-- .event -->
+
+
+							<div class="event">
+								<div class="entry-date">
+									<div class="date">31</div>
+									<span class="month">Jan</span>
+								</div>
+								<h2 class="entry-title"><a href="#">ECOSOC Partnership Forum 2023</a></h2>
+								<p>Theme: "Accelerating the recovery from the coronavirus disease (COVID-19) and the full implementatio</p>
+							</div> <!-- .event -->
+
+
+
+
+
+							<div class="event">
+								<div class="entry-date">
+									<div class="date">05</div>
+									<span class="month">MAY 2022</span>
+								</div>
+								<h2 class="entry-title"><a href="#">7th Multi-stakeholder Forum on Science, Technology and Innovation for the Sustainable Development Goals</a></h2>
+								<p>The seventh annual Multi-Stakeholder Forum on Science, Technology and Innovation for the SDGs</p>
+							</div> <!-- .event -->
+
+						</div> <!-- .event-carousel -->
+					</div> <!-- .container -->
+				</div> <!-- .upcoming-event-section -->
+
+				<div class="fullwidth-block why-chooseus-section">
+					<div class="container">
+						<h2 class="section-title">Why choose us?</h2>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="https://www.thestatesman.com/wp-content/uploads/2020/08/ECONOMY-1024x683.jpg" alt="" height="230">
+									</figure>
+									<h3 class="feature-title">NO POVERTY</h3>
+									<p>Quality education is crucial for empowering individuals, fostering critical thinking, and promoting equitable opportunities for personal and societal development</p>
+								</div> <!-- .feature -->
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="https://static1.squarespace.com/static/5eee7355f70ff2565a013e62/5eee89f967efe2371231ce8f/5ef66b1c6bd0e454156b3cda/1641945973415/Screen+Shot+2020-07-06+at+6.37.42+PM.png?format=1500w" alt="">
+									</figure>
+									<h3 class="feature-title">Zero Hunger</h3>
+									<p>Zero Hunger is a Sustainable Development Goal (SDG) aiming to eradicate all forms of hunger, malnutrition, and food insecurity worldwide, ensuring everyone has access to sufficient, safe, and nutritious food.</p>
+								</div> <!-- .feature -->
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure class="cut-corner">
+										<img src="https://assets.entrepreneur.com/content/3x2/2000/20170130183917-GettyImages-501858490.jpeg" alt="">
+									</figure>
+									<h3 class="feature-title">Quality Education</h3>
+									<p>Quality education is crucial for empowering individuals, fostering critical thinking, and promoting equitable opportunities for personal and societal development.</p>
+								</div> <!-- .feature -->
+							</div>
+						</div>
+					</div> <!-- .container -->
+				</div> <!-- .why-chooseus-section -->
+			</main> <!-- .main-content -->
+{% endblock %}

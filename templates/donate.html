@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="container py-3">
+  <header class="head">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Donate to us.</h1>
+      <p class="fs-5">Why Donate to us? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis dolor id massa molestie sollicitudin nec vitae libero. Phasellus et varius tellus. Integer aliquam, nulla et efficitur hendrerit, nunc est dignissim risus, porttitor dapibus felis dolor eget quam. In quis.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col col-lg-4 col-md-12">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">One-Time Donation</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$Any amount<small class="text-body-secondary fw-light"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Help poverty stricken people</li>
+              <li>90% of your money sent to them</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <a href="{{ url_for('payment') }}">
+               <button type="button" class="w-100 btn btn-lg btn-outline-dark block">Donate</button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-12">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Monthly-Donations</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$Amount<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Different family each week</li>
+              <li>Full amount sent to the families.</li>
+              <li>Priority email support</li>
+              <li>Help center access</li>
+            </ul>
+            <a href="{{ url_for('payment') }}">
+               <button type="button" class="w-100 btn btn-lg btn-dark">Get started</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-12">
+        <div class="card mb-4 rounded-3 shadow-sm border-dark">
+          <div class="card-header py-3 text-bg-dark border-dark">
+            <h4 class="my-0 fw-normal">Care Packages</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Packages are prioritized</li>
+              <li>Monitor your package movement</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <a href="{{ url_for('payment') }}">
+               <button type="button" class="w-100 btn btn-lg btn-dark">Contact us</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    
+</div>
+{% endblock %}
