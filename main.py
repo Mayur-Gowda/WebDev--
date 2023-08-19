@@ -6,11 +6,12 @@ year = date.today().year
 
 app = Flask(__name__)
 
+quotes = get_quote()
+
 
 @app.route('/')
 def homepage():
-    quote, author = get_quote()
-    return render_template("home.html", year=year, quote=quote,author=author)
+    return render_template("home.html", year=year, quotes=quotes)
 
 
 @app.route('/our-work')

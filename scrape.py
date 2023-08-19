@@ -2,18 +2,21 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-link = 'https://blogs.worldbank.org/search%3Ff%5B0%5D%3Dlanguage%3Aen%26f%5B1%5D%3Dtopic%3A303'
-quote_link = "https://api.quotable.io/random"
-date_frmt = "%B %d, %Y"
+link = 'https://news.un.org/en/tags/sdgs'
+quote_link = "https://api.quotable.io/quotes/random?limit=3"
+date_frmt = "%d %B %Y"
 output_frmt = "%d %b"
+
+quotes = {}
 
 
 def get_blogs():
     r = requests.get(link)
     soup = BeautifulSoup(r.content, 'html.parser')
     s = soup.find('div', class_="view-content")
-    h = s.find_all('h3', class_="field-content")
-    span = s.find_all('span', class_="field-content")
+    h = s.find_all('h2', class_="node__title")
+    div = s.find_all('div', class_="node__content")
+    span = s.find_all('time', class_="datetime")
 
     a_links = []
     headers = []
@@ -21,18 +24,18 @@ def get_blogs():
     dates = []
     dt = []
 
-    for h3 in h:
-        a_tag = h3.find('a')  # Find the <a> tag within each <h3> element
+    for h2 in h:
+        a_tag = h2.find('a')  # Find the <a> tag within each <h3> element
         if a_tag:
-            a_links.append(f"https://blogs.worldbank.org{a_tag['href']}")
+            a_links.append(f"https://news.un.org{a_tag['href']}")
             headers.append(a_tag.text)
-    for tag in span:
+    for tag in div:
         p = tag.find('p')
-        date = tag.find('time')
         if p:
             descrip.append(p.text)
-        if date:
-            txt = date.text
+    for tag in span:
+        if tag:
+            txt = tag.text
             frmt_date = datetime.strptime(txt, date_frmt)
             formatted_date = frmt_date.strftime(output_frmt)
             dates.append(formatted_date)
@@ -44,5 +47,8 @@ def get_blogs():
 
 
 def get_quote():
-    q = requests.get(quote_link).json()
-    return q["content"], q["author"]
+    q = requests.get(quote_link)
+    q = q.json()
+    for i in q:
+        quotes[i['content']] = i['author']
+    return quotes

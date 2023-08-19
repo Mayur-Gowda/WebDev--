@@ -44,12 +44,14 @@
 					<div class="container">
 						<div class="quote-slider">
 							<ul class="slides">
+								{% for quote, author in quotes.items() %}
 								<li>
 									<blockquote>
 										<p>{{ quote }}</p>
 										<cite>{{ author }}</cite>
 									</blockquote>
 								</li>
+								{% endfor %}
 							</ul>
 						</div>
 					</div>
@@ -59,12 +61,6 @@
 					<div class="container">
 						<header class="section-header">
 							<h2 class="section-title">Upcoming events</h2>
-
-							<div class="event-nav">
-								<a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
-	    						<a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
-							</div> <!-- .event-nav -->
-
 						</header> <!-- .section-header -->
 						<div class="event-carousel">
 
@@ -116,7 +112,7 @@
 
 				<div class="fullwidth-block why-chooseus-section">
 					<div class="container">
-						<h2 class="section-title">Why choose us?</h2>
+						<h2 class="section-title">Our Goals</h2>
 
 						<div class="row">
 							<div class="col-md-4">
