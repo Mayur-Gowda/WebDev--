@@ -1,10 +1,30 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, request
 from datetime import date
 from scrape import get_blogs, get_quote
+from flask_sqlalchemy import SQLAlchemy
+import secrets
 
 year = date.today().year
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "@0thisisaSECRET_KEY0@"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///blog.db"
+
+db = SQLAlchemy()
+db.init_app(app)
+
+
+class Donator(db.Model):
+    __tablename__ = 'donators'
+    unique = db.Column(db.String, primary_key=True)
+    name = db.Column(db.String(30), nullable=False)
+    amount = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String)
+
+
+with app.app_context():
+    db.create_all()
 
 quotes = get_quote()
 
@@ -40,8 +60,11 @@ def donate():
     return render_template('donate.html', year=year)
 
 
-@app.route('/payment')
+@app.route('/payment', methods=['POST', "GET"])
 def payment():
+    if request.method == "POST":
+        form_action = str(request.form.get('firstName'))
+
     return render_template('payment.html', year=year)
 
 

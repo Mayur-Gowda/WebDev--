@@ -15,13 +15,13 @@
       </div>
 
       <div class="row g-5">
-        <div class="col">
+        <div class="col-6 mx-auto">
           <h4 class="mb-3">Donation form</h4>
-          <form class="needs-validation" novalidate="">
+          <form class="needs-validation" novalidate="" action="{{ url_for('payment') }}" method="POST">
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <input type="text" name="firstName" class="form-control" id="firstName" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -42,6 +42,20 @@
                   Please enter a valid email address for donation receipt.
                 </div>
               </div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <label for="uniqueID" class="form-label">Unique ID</label>
+                  <input type="text" class="form-control" id="uniqueID" placeholder="">
+                  <div class="invalid-feedback">
+                    ID Doesn't exist
+                  </div>
+                </div>
+                <div class="col-4 mx-auto">
+                  <a class="btn btn-outline-dark" id="genBTN" style="margin-top: 30px;" type="submit" onclick="generateUniqueID()">Generate</a>
+                </div>
+              </div>
+              <p class="small">Generate an unique ID only if this is your first time donating. Keep the ID for future transactions.</p>
+
 
 
               <div class="col-md-5">
@@ -127,6 +141,12 @@
                   Security code required
                 </div>
               </div>
+
+              <div class="col-md-3">
+                <label for="amount" class="form-label">Amount</label>
+                <p style="display: inline;">₹</p>
+                <input type="number" class="form-control" id="amount" placeholder="" required="" min="1">
+              </div>
             </div>
 
             <hr class="my-4">
@@ -142,5 +162,18 @@
     </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+      <script>
+        function generateUniqueID() {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var uniqueID = '';
+            for (var i = 0; i < 10; i++) {
+                var randomIndex = Math.floor(Math.random() * characters.length);
+                uniqueID += characters.charAt(randomIndex);
+            }
+            document.getElementById('uniqueID').value = uniqueID;
+        }
+    </script>
+
 </body>
 </html>
