@@ -75,6 +75,33 @@
         </div>
       </div>
     </div>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-interval=300>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          <div class="container" style="padding-top: 20px;">
+            <div class="carousel-caption">
+              <h1>A Thank You.</h1>
+              <p>Here are the people who helped.</p>
+            </div>
+          </div>
+        </div>
+
+        {% for data in data %}
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          <div class="container" style="padding-top: 20px;">
+            <div class="carousel-caption">
+              <h1>{{ data.name }}.</h1>
+              <p class="opacity-75">Contributed ₹{{ data.amount }}.</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
   </main>
     
 </div>

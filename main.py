@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from datetime import date
 from scrape import get_blogs, get_quote
 from flask_sqlalchemy import SQLAlchemy
-import secrets
 
 year = date.today().year
 
@@ -57,14 +56,34 @@ def about():
 
 @app.route('/donate')
 def donate():
-    return render_template('donate.html', year=year)
+    data = Donator.query.all()
+    return render_template('donate.html', year=year, data=data)
 
 
 @app.route('/payment', methods=['POST', "GET"])
 def payment():
     if request.method == "POST":
-        form_action = str(request.form.get('firstName'))
-
+        unique_id = str(request.form.get('uniqueID'))
+        user = Donator.query.filter_by(unique=unique_id).first()
+        f_name = str(request.form.get('firstName'))
+        l_name = str(request.form.get('lastName'))
+        name = f"{f_name} {l_name}"
+        amount = int(request.form.get('amount'))
+        email = str(request.form.get('email'))
+        if user is None:
+            user_data = Donator(
+                unique=unique_id,
+                name=name,
+                amount=amount,
+                email=email
+            )
+            db.session.add(user_data)
+            db.session.commit()
+            return redirect(url_for('donate'))
+        else:
+            user.amount += amount
+            db.session.commit()
+            return redirect(url_for('donate'))
     return render_template('payment.html', year=year)
 
 
